@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Fondo oscuro principal inspirado en la noche de Gotham */
+    background-color: #121212; /* Negro muy oscuro, casi grafito */
+    /* Si tienes una imagen de fondo (como la última que me pasaste), la puedes mantener o quitar */
+    /* background-image: url('https://i.pinimg.com/736x/21/6b/60/216b6052a6b681db46cf45052119405f.jpg'); */ 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    margin: 0;
+    padding: 20px;
+    color: #E0E0E0; /* Gris muy claro para el texto principal, para contraste */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #1F1F1F; /* Un gris oscuro un poco más claro que el fondo del body */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada para un efecto más dramático */
+}
+
+h1 {
+    text-align: center;
+    color: #FACC15; /* ¡El amarillo/dorado icónico de Batman para el título! */
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el título */
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-color: #4A4A4A; /* Gris oscuro para la línea del título */
+    border-radius: 3px;
+}
+
+#curriculum {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.semester {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    background-color: #2C2C2C; /* Gris oscuro para los semestres */
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.semester:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.semester h2 {
+    background-color: #383838; /* Gris aún más oscuro para los títulos de semestre */
+    color: #FACC15; /* Amarillo de Batman para los títulos de semestre */
+    padding: 18px 20px;
+    margin: 0;
+    font-size: 1.6em;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 500;
+}
+
+.courses {
+    padding: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.course-item {
+    background-color: #383838; /* Fondo de los ramos más oscuro */
+    border: 1px solid #4A4A4A; /* Borde gris oscuro */
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    color: #E0E0E0; /* Texto claro para los ramos */
+}
+
+.course-item:last-child {
+    margin-bottom: 0;
+}
+
+.course-item:hover:not(.approved):not(.blocked) {
+    background-color: #4A4A4A; /* Gris más claro al pasar el ratón */
+    border-color: #FACC15; /* Borde amarillo al pasar el ratón para destacar */
+    transform: translateX(5px);
+}
+
+.course-item.approved {
+    background-color: #28A745; /* Verde vibrante para ramos aprobados (destaca sobre el oscuro) */
+    color: white; /* Texto blanco para ramos aprobados */
+    text-decoration: line-through;
+    border-color: #218838;
+    cursor: default;
+    opacity: 0.9;
+}
+
+.course-item.blocked {
+    background-color: #6C757D; /* Gris medio para ramos bloqueados */
+    color: #F0F0F0; /* Texto claro para ramos bloqueados */
+    border-color: #5A6268;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.course-item.blocked::after {
+    content: '🔒';
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100
