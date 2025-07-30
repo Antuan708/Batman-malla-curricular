@@ -1,18 +1,19 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
-    /* Fondo oscuro principal inspirado en la noche de Gotham */
-    background-color: #121212; /* Negro muy oscuro, casi grafito */
-    /* Si tienes una imagen de fondo (como la última que me pasaste), la puedes mantener o quitar */
-    /* background-image: url('https://i.pinimg.com/736x/21/6b/60/216b6052a6b681db46cf45052119405f.jpg'); */ 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    /* Background image configuration */
+    background-image: url('https://i.pinimg.com/736x/3c/67/31/3c673164f719d9ef66698415eb172793.jpg');
+    background-repeat: repeat;      /* The image will repeat */
+    background-size: auto;          /* Use the image's original size */
+    background-position: top left;  /* Start repeating from the top-left corner */
+    background-attachment: scroll;  /* The background will scroll with the content */
+    
+    /* Fallback color */
+    background-color: #121212;      /* Keeping the Batman palette's dark background */
     
     margin: 0;
     padding: 20px;
-    color: #E0E0E0; /* Gris muy claro para el texto principal, para contraste */
+    color: #E0E0E0;                  /* Ensure text color contrasts with the pattern */
     line-height: 1.6;
 }
 
@@ -116,7 +117,7 @@ h1::after {
 }
 
 .course-item.approved {
-    background-color: #28A745; /* Verde vibrante para ramos aprobados (destaca sobre el oscuro) */
+    background-color: #FACC15; /* Verde vibrante para ramos aprobados (destaca sobre el oscuro) */
     color: white; /* Texto blanco para ramos aprobados */
     text-decoration: line-through;
     border-color: #218838;
